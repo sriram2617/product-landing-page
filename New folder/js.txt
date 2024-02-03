@@ -1,0 +1,41 @@
+// Sample product data
+const product = {
+    name: "Awesome Product",
+    description: "Your one-stop solution for all your needs!",
+    image: "product-image.jpg",
+  };
+  
+  // Function to render the product details
+  function renderProduct() {
+    const productContainer = document.getElementById("product-container");
+  
+    // Create elements
+    const heading = document.createElement("h1");
+    heading.textContent = product.name;
+  
+    const description = document.createElement("p");
+    description.textContent = product.description;
+  
+    const image = document.createElement("img");
+    image.src = product.image;
+    image.alt = "Product Image";
+  
+    const buyButton = document.createElement("button");
+    buyButton.textContent = "Buy Now";
+    buyButton.addEventListener("click", buyNow);
+  
+    // Append elements to the container
+    productContainer.appendChild(heading);
+    productContainer.appendChild(description);
+    productContainer.appendChild(image);
+    productContainer.appendChild(buyButton);
+  }
+  
+  // Function to handle the buy now action
+  function buyNow() {
+    alert('Thank you for your purchase!');
+    // Add additional logic or redirect to a checkout page
+  }
+  
+  // Call the renderProduct function when the page loads
+  document.addEventListener("DOMContentLoaded", renderProduct);
